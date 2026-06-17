@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Up Game</title>
+
+    <!-- Library wajib -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+
+    <!-- SAMBUNGAN KE FILE API (cara tulisnya benar) -->
+    <script src="api.js"></script>
+
+    <style>
+        * {margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
+        body {background:#f5f7fa;padding:15px;}
+        .wadah {max-width:480px;margin:0 auto;}
+        .atas {background:#2196F3;color:white;padding:20px;border-radius:12px;text-align:center;margin-bottom:20px;}
+        .kartu {background:white;border-radius:12px;padding:18px;margin-bottom:15px;box-shadow:0 2px 6px #00000012;}
+        .ikon {width:65px;height:65px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:bold;color:white;margin-bottom:12px;}
+        .ff {background:linear-gradient(135deg,#FF5722,#E91E63);}
+        .ml {background:linear-gradient(135deg,#2196F3,#673AB7);}
+        .nama {font-size:19px;font-weight:bold;color:#222;margin-bottom:8px;}
+        .harga {color:#2E7D32;font-weight:bold;font-size:16px;margin-bottom:12px;}
+        .input {width:100%;padding:12px;border:1px solid #ddd;border-radius:8px;margin-bottom:10px;font-size:15px;}
+        .tombol {width:100%;padding:12px;background:#2196F3;color:white;border:none;border-radius:8px;font-size:16px;cursor:pointer;}
+        .tombol:hover {background:#1976D2;}
+        .hasil {margin-top:12px;padding:10px;border-radius:6px;display:none;font-size:14px;}
+        .sukses {background:#ECFDF3;color:#065F46;border:1px solid #BBF7D0;}
+        .gagal {background:#FEF2F2;color:#991B1B;border:1px solid #FECACA;}
+    </style>
+</head>
+<body>
+
+<div class="wadah">
+    <div class="atas">
+        <h2>TOP UP GAME</h2>
+        <p>Resmi • Otomatis 24 Jam</p>
+    </div>
+
+    <!-- Free Fire -->
+    <div class="kartu">
+        <div class="ikon ff">FF</div>
+        <h3 class="nama">Free Fire 100 DM</h3>
+        <p class="harga">Rp 15.000</p>
+        <input type="text" class="input" id="id_ff" placeholder="Masukkan ID">
+        <button class="tombol" onclick="kirimPesanan('FF100', id_ff.value)">Beli Sekarang</button>
+        <div id="res_FF100" class="hasil"></div>
+    </div>
+
+    <!-- Mobile Legends -->
+    <div class="kartu">
+        <div class="ikon ml">ML</div>
+        <h3 class="nama">MLBB 100 DM</h3>
+        <p class="harga">Rp 14.500</p>
+        <input type="text" class="input" id="id_ml" placeholder="Masukkan ID">
+        <input type="text" class="input" id="zona_ml" placeholder="Masukkan Zona">
+        <button class="tombol" onclick="kirimPesanan('ML100', id_ml.value, zona_ml.value)">Beli Sekarang</button>
+        <div id="res_ML100" class="hasil"></div>
+    </div>
+</div>
+
+</body>
+</html>
